@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Професійний ремонт квартир та будинків під ключ | Гарантія якості</title>
+    <meta name="description" content="Комплексний ремонт під ключ у вашому місті. Гарантія 2 роки. Без прихованих кошторисів. Зв'яжіться через Telegram-бота для миттєвого розрахунку!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Telegram Bot Floating Button -->
+    <div class="telegram-float" id="telegramBtn">
+        <i class="fab fa-telegram-plane"></i>
+        <span class="tooltip">Розрахувати вартість у боті</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <div>
+                    <h1>Ремонт<span>Про</span></h1>
+                    <p>комплексний ремонт під ключ</p>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <ul>
+                    <li><a href="#services">Послуги</a></li>
+                    <li><a href="#portfolio">Портфоліо</a></li>
+                    <li><a href="#prices">Ціни</a></li>
+                    <li><a href="#reviews">Відгуки</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-contacts">
+                <a href="tel:+380631234567" class="phone">
+                    <i class="fas fa-phone"></i>
+                    +38 (063) 123-45-67
+                </a>
+                <button class="btn-primary" id="headerCalcBtn">
+                    <i class="fab fa-telegram-plane"></i> Розрахувати у Telegram
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Ремонт квартир та будинків <span>під ключ</span> з гарантією 2 роки</h2>
+                <p class="subtitle">Від дизайн-проекту до фінального прибирання. Працюємо чітко за договором, без затримок та прихованих платежів</p>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Чіткі терміни у договорі</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Гарантія на всі роботи</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>Безкоштовний замір</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-toolbox"></i>
+                        <span>Власні майстри</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" id="heroCalcBtn">
+                        <i class="fab fa-telegram-plane"></i> Отримати розрахунок у боті за 2 хвилини
+                    </button>
+                    <button class="btn-secondary" id="portfolioBtn">
+                        <i class="fas fa-images"></i> Подивитись портфоліо
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <!-- Здесь будет ваше фото -->
+                    <div class="before-after">
+                        <div class="before">
+                            <span>ДО</span>
+                        </div>
+                        <div class="after">
+                            <span>ПІСЛЯ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator CTA -->
+    <section class="calculator-cta">
+        <div class="container">
+            <h3>Дізнайтесь орієнтовну вартість вашого ремонту прямо зараз!</h3>
+            <p>Наш Telegram-бот задасть 5 простих питань і надасть попередній розрахунок</p>
+            
+            <div class="calc-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Натисніть кнопку</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Відповідайте на питання</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Отримайте вартість</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Запишіться на замір</p>
+                </div>
+            </div>
+            
+            <button class="btn-primary btn-xlarge" id="mainCalcBtn">
+                <i class="fab fa-telegram-plane"></i> Запустити Telegram-бота для розрахунку
+            </button>
+            
+            <p class="cta-note"><i class="fas fa-clock"></i> Розрахунок займе 2 хвилини. Безкоштовно.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Наші послуги</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Комплексний ремонт</h3>
+                    <p>Під ключ від планування до здачі. Включає всі етапи: демонтаж, електрика, сантехніка, стяжка, штукатурка, поклейка шпалер, покрівля.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Косметичний ремонт</h3>
+                    <p>Оновлення інтер'єру без зміни планування: фарбування стін, заміна підлоги, оновлення електрики, заміна дверей.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Ремонт санвузлів</h3>
+                    <p>Повний комплекс робіт у ванній кімнаті та туалеті: гідроізоляція, укладка плитки, монтаж сантехніки, підвісні стелі.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>Дизайн-проект</h3>
+                    <p>Розробка індивідуального дизайн-проекту з 3D-візуалізацією, підбір матеріалів, кольорів та меблів.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Наші роботи</h2>
+            <p class="section-subtitle">Більше 50 успішно завершених проектів</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="badge">Квартира, 65 м²</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ремонт двокімнатної квартири</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> ЖК "Новобудова", м. Київ</p>
+                        <div class="portfolio-details">
+                            <span><i class="fas fa-clock"></i> 45 днів</span>
+                            <span><i class="fas fa-coins"></i> 350 000 грн</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="badge">Котедж, 120 м²</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ремонт котеджу під ключ</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> с. Петропавлівська Борщагівка</p>
+                        <div class="portfolio-details">
+                            <span><i class="fas fa-clock"></i> 90 днів</span>
+                            <span><i class="fas fa-coins"></i> 850 000 грн</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="badge">Офіс, 80 м²</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Офісний ремонт</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> вул. Хрещатик, м. Київ</p>
+                        <div class="portfolio-details">
+                            <span><i class="fas fa-clock"></i> 30 днів</span>
+                            <span><i class="fas fa-coins"></i> 280 000 грн</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center">
+                <button class="btn-secondary" id="morePortfolioBtn">
+                    <i class="fas fa-images"></i> Більше проектів у Telegram-каналі
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices -->
+    <section class="prices" id="prices">
+        <div class="container">
+            <h2 class="section-title">Зрозумілі ціни</h2>
+            <p class="section-subtitle">Робота за фіксованим кошторисом. Без прихованих платежів</p>
+            
+            <div class="prices-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Косметичний</h3>
+                        <div class="price">від 1 800 <small>грн/м²</small></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Демонтаж старих покриттів</li>
+                        <li><i class="fas fa-check"></i> Шпаклювання та фарбування стін</li>
+                        <li><i class="fas fa-check"></i> Укладка ламінату/лінолеуму</li>
+                        <li><i class="fas fa-check"></i> Заміна електрики (точки)</li>
+                        <li><i class="fas fa-times"></i> Перепланування</li>
+                        <li><i class="fas fa-times"></i> Чорнові роботи</li>
+                    </ul>
+                    <button class="btn-outline" data-type="cosmetic">
+                        <i class="fab fa-telegram-plane"></i> Розрахувати цей тип
+                    </button>
+                </div>
+                
+                <div class="price-card featured">
+                    <div class="price-badge">Популярний</div>
+                    <div class="price-header">
+                        <h3>Капітальний</h3>
+                        <div class="price">від 3 200 <small>грн/м²</small></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Повний демонтаж</li>
+                        <li><i class="fas fa-check"></i> Чернові роботи (стяжка, штукатурка)</li>
+                        <li><i class="fas fa-check"></i> Повна заміна електрики</li>
+                        <li><i class="fas fa-check"></i> Заміна сантехніки</li>
+                        <li><i class="fas fa-check"></i> Поклейка шпалер/фарбування</li>
+                        <li><i class="fas fa-check"></i> Укладка підлоги</li>
+                    </ul>
+                    <button class="btn-primary" data-type="capital">
+                        <i class="fab fa-telegram-plane"></i> Розрахувати цей тип
+                    </button>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Преміум</h3>
+                        <div class="price">від 5 500 <small>грн/м²</small></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Всі роботи з капітального</li>
+                        <li><i class="fas fa-check"></i> Дизайн-проект з 3D</li>
+                        <li><i class="fas fa-check"></i> Дорогі матеріали (паркет, декоративна штукатурка)</li>
+                        <li><i class="fas fa-check"></i> Монтаж складних конструкцій</li>
+                        <li><i class="fas fa-check"></i> Система "розумний дім"</li>
+                        <li><i class="fas fa-check"></i> Авторський нагляд</li>
+                    </ul>
+                    <button class="btn-outline" data-type="premium">
+                        <i class="fab fa-telegram-plane"></i> Розрахувати цей тип
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Відгуки клієнтів</h2>
+            
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="review-author">
+                            <h4>Олена Коваленко</h4>
+                            <p>Ремонт 3-кімнатної квартири</p>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Дуже задоволена роботою! Ремонт зробили швидко, якісно, зафіксованою у договорі ціною. Особливо подобалась можливість спілкування через Telegram - завжди швидко відповідали на питання."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span><i class="fas fa-calendar"></i> Липень 2023</span>
+                        <a href="#" class="review-link">Читати в Telegram</a>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="review-author">
+                            <h4>Андрій Петренко</h4>
+                            <p>Ремонт котеджу</p>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Зробили якісний ремонт будинку. Ціну розрахували через бота, все прозоро. Працювали без затримок. Рекомендую!"</p>
+                    </div>
+                    <div class="review-footer">
+                        <span><i class="fas fa-calendar"></i> Травень 2023</span>
+                        <a href="#" class="review-link">Читати в Telegram</a>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="review-author">
+                            <h4>Марина Шевченко</h4>
+                            <p>Ремонт кухні та ванної</p>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-text">
+                        <p>"Зробили дуже гарний ремонт у ванній та кухні. Все в термін, прибирали після себе. Тепер раджу всім знайомим вашого бота для розрахунку ремонту."</p>
+                    </div>
+                    <div class="review-footer">
+                        <span><i class="fas fa-calendar"></i> Березень 2023</span>
+                        <a href="#" class="review-link">Читати в Telegram</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center">
+                <button class="btn-secondary">
+                    <i class="fab fa-telegram"></i> Більше відгуків у нашому каналі
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & CTA -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Зв'яжіться з нами</h2>
+                <p class="section-subtitle">Отримайте безкоштовну консультацію та розрахунок вартості</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-telegram-plane"></i>
+                        <div>
+                            <h4>Telegram-бот</h4>
+                            <p>Швидкий розрахунок вартості</p>
+                            <a href="#" class="contact-link" id="finalCalcBtn">Запустити бота</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>Щодня 9:00 - 20:00</p>
+                            <a href="tel:+380631234567" class="contact-link">+38 (063) 123-45-67</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Місто</h4>
+                            <p>Працюємо по Києву та області</p>
+                            <span class="contact-link">Виїзд на замір безкоштовний</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Або залиште заявку</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Номер телефону" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Опишіть ваш об'єкт (площа, тип ремонту)..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fab fa-telegram-plane"></i> Надіслати та отримати розрахунок у Telegram
+                    </button>
+                    <p class="form-note">Ми відповімо протягом 15 хвилин</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <i class="fas fa-tools"></i>
+                        <div>
+                            <h3>Ремонт<span>Про</span></h3>
+                            <p>Професійний ремонт під ключ</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Якісний ремонт квартир та будинків з гарантією. Працюємо прозоро за договором.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4>Навігація</h4>
+                    <ul>
+                        <li><a href="#services">Послуги</a></li>
+                        <li><a href="#portfolio">Портфоліо</a></li>
+                        <li><a href="#prices">Ціни</a></li>
+                        <li><a href="#reviews">Відгуки</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+380631234567">+38 (063) 123-45-67</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@remontpro.ua">info@remontpro.ua</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> м. Київ, вул. Будівельна, 15</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб: 10:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 РемонтПро. Всі права захищені.</p>
+                <p>Сайт створено для вашого зручного зв'язку з нами</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Telegram Modal -->
+    <div class="modal" id="telegramModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Запуск Telegram-бота для розрахунку</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <p>Натисніть кнопку нижче, щоб перейти до нашого Telegram-бота. Він задасть кілька питань та надасть попередній розрахунок вартості вашого ремонту.</p>
+                
+                <div class="modal-features">
+                    <p><i class="fas fa-check-circle"></i> Швидко - 2-3 хвилини</p>
+                    <p><i class="fas fa-check-circle"></i> Безкоштовно</p>
+                    <p><i class="fas fa-check-circle"></i> Без спаму</p>
+                </div>
+                
+                <a href="https://t.me/your_bot_username" target="_blank" class="btn-primary btn-xlarge modal-btn">
+                    <i class="fab fa-telegram-plane"></i> Перейти до бота в Telegram
+                </a>
+                
+                <p class="modal-note">Після розрахунку ви зможете одразу записатись на безкоштовний замір</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
